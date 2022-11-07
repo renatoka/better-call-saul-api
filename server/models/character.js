@@ -38,13 +38,14 @@ const characterSchema = new mongoose.Schema({
         required: true
     },
     nickname: {
-        type: String,
+        type: Array,
         required: true
     },
     portrayed: {
         type: String,
         required: true
-    }
-});
+    },
+},
+    { versionKey: false });
 
 module.exports = mongoose.model('Character', characterSchema);
