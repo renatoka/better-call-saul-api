@@ -15,6 +15,10 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(express.json());
 
+app.get ('/test', (req, res) => {
+    res.send('Hello World');
+});
+
 const charactersRouter = require('./routes/characters');
 const episodesRouter = require('./routes/episodes');
 app.use('/characters', charactersRouter);
