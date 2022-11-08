@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-let port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || '0.0.0.0';
 require('dotenv').config();
 const app = express();
 
@@ -10,7 +11,7 @@ const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to MongoDB Database'));
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, host, () => {
     console.log(`app running on ${port} `);
 });
 

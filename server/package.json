@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "postinstall": "npm run build",
-    "start" : "node server.js"
+    "start" : "node server.js -p $PORT"
   },
   "keywords": [],
   "author": "",
