@@ -12,4 +12,6 @@ app.listen(port, () => console.log('Server Started on port ' + port));
 app.use(express.json());
 
 const charactersRouter = require('./routes/characters');
+const episodesRouter = require('./routes/episodes');
 app.use('/characters', charactersRouter);
+app.use('/episodes', episodesRouter);
