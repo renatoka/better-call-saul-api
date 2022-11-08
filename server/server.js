@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const port = process.env.PORT || 3000;
-const host = process.env.HOST || '0.0.0.0';
 require('dotenv').config();
 const app = express();
 
@@ -21,6 +20,6 @@ const episodesRouter = require('./routes/episodes');
 app.use('/characters', charactersRouter);
 app.use('/episodes', episodesRouter);
 
-app.listen(port, host, () => {
+app.listen(port, () => {
     console.log(`app running on ${port} `);
 });
