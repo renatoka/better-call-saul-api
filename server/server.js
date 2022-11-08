@@ -11,9 +11,6 @@ const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to MongoDB Database'));
 
-app.listen(port, host, () => {
-    console.log(`app running on ${port} `);
-});
 
 app.use(express.static(path.join(__dirname, '/public')));
 
@@ -23,3 +20,7 @@ const charactersRouter = require('./routes/characters');
 const episodesRouter = require('./routes/episodes');
 app.use('/characters', charactersRouter);
 app.use('/episodes', episodesRouter);
+
+app.listen(port, host, () => {
+    console.log(`app running on ${port} `);
+});
