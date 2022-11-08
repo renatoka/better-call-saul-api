@@ -9,8 +9,9 @@ const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to MongoDB Database'));
 
-app.use(express.static(path.join(__dirname, '/public')));
 app.listen(process.env.PORT || 3001, '0.0.0.0' , () => console.log(`Server started on port ${PORT}`));
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(express.json());
 
