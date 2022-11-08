@@ -28,7 +28,7 @@ router.get('/random', async (req, res, next) => {
 });
 
 // Get Character by Name
-router.get('/search/:name', async (req, res, next) => {
+router.get('/character/:name', async (req, res, next) => {
     try {
         const character = await Character.findOne({ name: req.params.name });
         if (character == null) return res.status(404).json({ message: 'Character not found in the database. Please try again.' });
@@ -40,7 +40,7 @@ router.get('/search/:name', async (req, res, next) => {
 
 
 // Get Specific Character by ID
-router.get('/id/:char_id', async (req, res, next) => {
+router.get('/:char_id', async (req, res, next) => {
     try {
         const character = await Character.find({ char_id: req.params.char_id });
         if (character.length == 0) return res.status(404).json({ message: 'No characters found with ID: ' + req.params.char_id });
