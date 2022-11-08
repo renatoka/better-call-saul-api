@@ -9,6 +9,13 @@ const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to MongoDB Database'));
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+    });
+}
+
 app.listen(port, () => console.log('Server Started on port ' + port));
 app.use(express.json());
 
