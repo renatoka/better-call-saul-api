@@ -8,7 +8,7 @@ function App() {
         </h1>
       </div>
       <div className="items-center justify-end flex-grow hidden basis-0 md:flex">
-        <a href="https://spinalcms.com/"
+        <a href="https://better-call-saul-api.onrender.com/characters"
           className="px-4 py-2 text-sm font-semibold rounded bg-slate-900 text-slate-50 transition ease-in-out delay-75 hover:scale-105 duration-200">
           Go Explore API
         </a>
@@ -140,7 +140,7 @@ function App() {
                 </h3>
                 <div className="mt-2">
                   <code className="text-base font-mono text-slate-600">
-                    https://www.bettercallsaul-api.com/characters
+                    https://better-call-saul-api.onrender.com/characters
                   </code>
                 </div>
               </div>
@@ -192,11 +192,11 @@ function App() {
                 </h3>
                 <div className="mt-2">
                   <code className="text-base font-mono text-slate-600">
-                    https://www.bettercallsaul-api.com/characters/random
+                    https://better-call-saul-api.onrender.com/characters/random
                   </code>
 
                   <p className="mt-2 text-base text-slate-600">
-                    Example: <code className="text-base font-mono text-slate-600">https://www.bettercallsaul-api.com/characters/character/Jimmy McGill</code>
+                    Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/characters/character/Jimmy McGill</code>
                   </p>
                 </div>
               </div>
@@ -214,7 +214,7 @@ function App() {
                 </h3>
                 <div className="mt-2">
                   <code className="text-base font-mono text-slate-600">
-                    https://www.bettercallsaul-api.com/characters/character/:name
+                    https://better-call-saul-api.onrender.com/characters/character/:name
                   </code>
 
                   <p className="mt-2 text-base text-slate-600">
@@ -223,7 +223,7 @@ function App() {
                   </p>
 
                   <p className="mt-2 text-base text-slate-600">
-                    Example: <code className="text-base font-mono text-slate-600">https://www.bettercallsaul-api.com/characters/character/Jimmy McGill</code>
+                    Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/characters/character/Jimmy McGill</code>
                   </p>
 
                   <p className="mt-2 text-base text-slate-600">
@@ -247,7 +247,7 @@ function App() {
                   Endpoint
                 </h3>
                 <div className="mt-2">
-                  <code className="text-base font-mono text-slate-600">https://www.bettercallsaul-api.com/characters/:char_id</code>
+                  <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/characters/:char_id</code>
                   <p className="mt-2 text-base text-slate-600">
                     Replace <code className="text-base font-mono text-slate-600">:char_id</code> with the
                     id of the character you want to get.
@@ -266,7 +266,7 @@ function App() {
                 <h3 className="text-xl font-bold tracking-tight text-slate-900">Endpoint</h3>
                 <div className="mt-2 mb-1">
                   <code className="text-base font-mono text-slate-600">
-                    https://www.bettercallsaul-api.com/episodes
+                    https://better-call-saul-api.onrender.com/episodes
                   </code>
                 </div>
               </div>
@@ -307,7 +307,7 @@ function App() {
                 <h3 className="text-xl font-bold tracking-tight text-slate-900">Endpoint</h3>
                 <div className="mt-2">
                   <code className="text-base font-mono text-slate-600">
-                    https://www.bettercallsaul-api.com/episodes/random
+                    https://better-call-saul-api.onrender.com/episodes/random
                   </code>
                 </div>
               </div>
@@ -319,7 +319,7 @@ function App() {
                 <h3 className="text-xl font-bold tracking-tight text-slate-900">Endpoint</h3>
                 <div className="mt-2">
                   <code className="text-base font-mono text-slate-600">
-                    https://www.bettercallsaul-api.com/episodes/episode/:title
+                    https://better-call-saul-api.onrender.com/episodes/episode/:title
                   </code>
                 </div>
               </div>
@@ -331,7 +331,7 @@ function App() {
                 <h3 className="text-xl font-bold tracking-tight text-slate-900">Endpoint</h3>
                 <div className="mt-2">
                   <code className="text-base font-mono text-slate-600">
-                    https://www.bettercallsaul-api.com/episodes/:episode_id
+                    https://better-call-saul-api.onrender.com/episodes/:episode_id
                   </code>
 
                   <p className="mt-2 text-base text-slate-600">
@@ -339,7 +339,7 @@ function App() {
                     id of the episode you want to get.
                   </p>
 
-                  <p className="mt-2 text-base text-slate-600">Example: <code className="text-base font-mono text-slate-60">https://www.bettercallsaul-api.com/episodes/1</code></p>
+                  <p className="mt-2 text-base text-slate-600">Example: <code className="text-base font-mono text-slate-60">https://better-call-saul-api.onrender.com/episodes/1</code></p>
                 </div>
               </div>
             </div>
@@ -351,6 +351,13 @@ function App() {
         </article>
       </div>
     </main>
+    <div>
+      <footer className="flex flex-col items-center justify-center w-full h-24 mt-8 border-t border-slate-300">
+        <p className="text-sm text-slate-600">
+          Made with ❤️ by <a href="https://github.com/renatoka" className="underline hover:no-underline">Renato Kauric</a>
+        </p>
+      </footer>
+    </div>
   </>)
 }
 
