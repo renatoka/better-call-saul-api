@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const port = process.env.PORT || 3000;
 const app = express();
-const axios = require('axios').default;
+const axios = require('axios');
 require('dotenv').config();
 
 // Connect to MongoDB
@@ -14,7 +14,6 @@ db.once('open', () => console.log('Connected to MongoDB Database'));
 
 // Middleware to display React Page
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(express.json());
 
 const charactersRouter = require('./routes/characters');
@@ -26,15 +25,14 @@ app.listen(port, () => {
     console.log(`app running on ${port} `);
 });
 
-// make a call to the API every 13 minutes without axios
-setInterval(() => {
-    axios.get('https://better-call-saul-api.onrender.com/characters')
-        .then(res => {
-            console.log(res.data);
-        }
-        )
-        .catch(err => {
-            console.log(err);
-        }
-        )
-}, 780000);
+const callItself = async () => {
+    try {
+        const response = await axios.get('https://better-call-saul-api.onrender.com/characters');
+        console.log("Called API to stay alive");
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// call every 10 minutes
+setInterval(callItself, 600000);
