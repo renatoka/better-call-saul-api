@@ -28,7 +28,7 @@ app.listen(port, () => {
 
 // make a call to the API every 13 minutes without axios
 setInterval(() => {
-    axios.get('hhttps://better-call-saul-api.onrender.com/characters')
+    axios.get('https://better-call-saul-api.onrender.com/characters')
         .then(res => {
             console.log(res.data);
         }
