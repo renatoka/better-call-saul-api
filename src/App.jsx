@@ -7,7 +7,12 @@ function App() {
           Better Call Saul API
         </h1>
       </div>
-      <div className="items-center justify-end flex-grow hidden basis-0 md:flex">
+      <div className="items-center justify-end flex-grow hidden basis-0 md:flex gap-3">
+        <div>
+          <a href="https://github.com/renatoka/better-call-saul-api" target="_blank" rel="noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github Repository" className="w-8 h-8 rounded-full" />
+          </a>
+        </div>
         <a href="https://better-call-saul-api.onrender.com/characters"
           className="px-4 py-2 text-sm font-semibold rounded bg-slate-900 text-slate-50 transition ease-in-out delay-75 hover:scale-105 duration-200">
           Go Explore API
@@ -28,22 +33,8 @@ function App() {
       <div
         className="fixed top-[3.5rem] h-screen shadow-xl px-4 left-0 hidden peer-checked:block lg:relative lg:top-0 lg:h-auto lg:px-0 lg:block lg:flex-none lg:shadow-none">
         <div className="absolute inset-y-0 right-0 w-full lg:w-[50vw] bg-white lg:bg-slate-50"></div>
-
         <nav className="sticky top-[4.5rem] w-64 pr-8 text-base lg:text-sm xl:w-72 xl:pr-16">
           <ul role="list" className="-ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto py-7 pl-0.5 space-y-8">
-            <li>
-              <h3 className="font-semibold tracking-tight text-xl text-slate-900">
-                Getting started
-              </h3>
-              <ul role="list" className="pl-3 mt-3 space-y-2">
-                <li>
-                  <a href="#" className="text-slate-900 hover:text-slate-800">
-                    Installation
-                  </a>
-                </li>
-              </ul>
-            </li>
-
             <li>
               <h3 className="font-semibold tracking-tight text-xl text-slate-900">
                 Characters
@@ -194,10 +185,6 @@ function App() {
                   <code className="text-base font-mono text-slate-600">
                     https://better-call-saul-api.onrender.com/characters/random
                   </code>
-
-                  <p className="mt-2 text-base text-slate-600">
-                    Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/characters/character/Jimmy McGill</code>
-                  </p>
                 </div>
               </div>
             </div>
@@ -216,11 +203,6 @@ function App() {
                   <code className="text-base font-mono text-slate-600">
                     https://better-call-saul-api.onrender.com/characters/character/:name
                   </code>
-
-                  <p className="mt-2 text-base text-slate-600">
-                    Replace <code className="text-base font-mono text-slate-600">:name</code> with the
-                    name of the character you want to get.
-                  </p>
 
                   <p className="mt-2 text-base text-slate-600">
                     Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/characters/character/Jimmy McGill</code>
@@ -248,10 +230,6 @@ function App() {
                 </h3>
                 <div className="mt-2">
                   <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/characters/:char_id</code>
-                  <p className="mt-2 text-base text-slate-600">
-                    Replace <code className="text-base font-mono text-slate-600">:char_id</code> with the
-                    id of the character you want to get.
-                  </p>
                   <p className="mt-2 text-base text-slate-600">Example: <code className="text-base font-mono text-slate-600">https://www.bettercallsaul-api.com/characters/1</code></p>
                 </div>
               </div>
@@ -322,6 +300,11 @@ function App() {
                     https://better-call-saul-api.onrender.com/episodes/episode/:title
                   </code>
                 </div>
+                <div className="mt-2">
+                  <p className="mt-2 text-base text-slate-600">
+                    Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/episodes/episode/Point and Shoot</code>
+                  </p>
+                </div>
               </div>
             </div>
             <div id="get-episode-id" className="border-b border-slate-300">
@@ -333,12 +316,6 @@ function App() {
                   <code className="text-base font-mono text-slate-600">
                     https://better-call-saul-api.onrender.com/episodes/:episode_id
                   </code>
-
-                  <p className="mt-2 text-base text-slate-600">
-                    Replace <code className="text-base font-mono text-slate-600">:episode_id</code> with the
-                    id of the episode you want to get.
-                  </p>
-
                   <p className="mt-2 text-base text-slate-600">Example: <code className="text-base font-mono text-slate-60">https://better-call-saul-api.onrender.com/episodes/1</code></p>
                 </div>
               </div>
@@ -354,7 +331,7 @@ function App() {
     <div>
       <footer className="flex flex-col items-center justify-center w-full h-24 mt-8 border-t border-slate-300">
         <p className="text-sm text-slate-600">
-          Made with ❤️ by <a href="https://github.com/renatoka" className="underline hover:no-underline">Renato Kauric</a>
+          Made with ❤️ by <a href="https://github.com/renatoka" className="underline hover:no-underline">@renatoka</a>
         </p>
       </footer>
     </div>

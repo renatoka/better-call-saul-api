@@ -2,15 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const port = process.env.PORT || 3000;
-require('dotenv').config();
 const app = express();
+const axios = require('axios');
+require('dotenv').config();
 
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_DB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to MongoDB Database'));
 
-
+// Middleware to display React Page
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
@@ -23,3 +25,15 @@ app.use('/episodes', episodesRouter);
 app.listen(port, () => {
     console.log(`app running on ${port} `);
 });
+
+// make a call to the API every 13 minutes
+setInterval(() => {
+    console.log('Calling API to keep Random app alive');
+    axios.get('https://better-call-saul-api.onrender.com/characters/random')
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}, 780000);

@@ -6,7 +6,7 @@ const Character = require('../models/character');
 router.get('/', async (req, res, next) => {
     try {
         const characters = await Character.find();
-        if (characters.length == 0) return res.status(404).json({ message: 'No characters found in the database. Something must have went wrong.' });
+        if (characters.length == 0) return res.status(404).json({ message: 'Database Error. No characters found. Try again later.' });
         else { res.status(200).json(characters) };
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
 router.get('/random', async (req, res, next) => {
     try {
         const characters = await Character.find();
-        if (characters.length == 0) return res.status(404).json({ message: 'No characters found in the database. Something must have went wrong.' });
+        if (characters.length == 0) return res.status(404).json({ message: 'Database Error. No characters found. Try again later.' });
         else {
             const random = Math.floor(Math.random() * characters.length);
             res.status(200).json(characters[random]);
@@ -31,7 +31,7 @@ router.get('/random', async (req, res, next) => {
 router.get('/character/:name', async (req, res, next) => {
     try {
         const character = await Character.findOne({ name: req.params.name });
-        if (character == null) return res.status(404).json({ message: 'Character not found in the database. Please try again.' });
+        if (character == null) return res.status(404).json({ message: 'Character doesn\'t exist. Check spelling and try again.' });
         else { res.status(200).json(character) };
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -43,7 +43,7 @@ router.get('/character/:name', async (req, res, next) => {
 router.get('/:char_id', async (req, res, next) => {
     try {
         const character = await Character.find({ char_id: req.params.char_id });
-        if (character.length == 0) return res.status(404).json({ message: 'No characters found with ID: ' + req.params.char_id });
+        if (character.length == 0) return res.status(404).json({ message: 'Character doesn\'t exist. Check spelling and try again.' });
         else { res.status(200).json(character) };
     } catch (err) {
         res.status(500).json({ message: err.message });

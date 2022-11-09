@@ -6,7 +6,7 @@ const Episode = require('../models/episode');
 router.get('/', async (req, res, next) => {
     try {
         const episodes = await Episode.find();
-        if (episodes.length == 0) return res.status(404).json({ message: 'No episodes found in the database. Something must have went wrong.' });
+        if (episodes.length == 0) return res.status(404).json({ message: 'Database Error. No episodes found. Try again later.' });
         else { res.status(200).json(episodes) };
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
 router.get('/random', async (req, res, next) => {
     try {
         const episodes = await Episode.find();
-        if (episodes.length == 0) return res.status(404).json({ message: 'No episodes found in the database. Something must have went wrong.' });
+        if (episodes.length == 0) return res.status(404).json({ message: 'Database Error. No episodes found. Try again later.' });
         else {
             const random = Math.floor(Math.random() * episodes.length);
             res.status(200).json(episodes[random]);
@@ -31,7 +31,7 @@ router.get('/random', async (req, res, next) => {
 router.get('/episode/:title', async (req, res, next) => {
     try {
         const episode = await Episode.findOne({ title: req.params.title });
-        if (episode == null) return res.status(404).json({ message: 'Episode not found in the database. Please try again.' });
+        if (episode == null) return res.status(404).json({ message: 'Episode doesn\'t exist. Check spelling and try again.' });
         else { res.status(200).json(episode) };
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -42,7 +42,7 @@ router.get('/episode/:title', async (req, res, next) => {
 router.get('/:episode_id', async (req, res, next) => {
     try {
         const episode = await Episode.find({ episode_id: req.params.episode_id });
-        if (episode.length == 0) return res.status(404).json({ message: 'No episodes found with ID: ' + req.params.episode_id });
+        if (episode.length == 0) return res.status(404).json({ message: 'Episode doesn\'t exist. Check spelling and try again.' });
         else { res.status(200).json(episode) };
     } catch (err) {
         res.status(500).json({ message: err.message });
