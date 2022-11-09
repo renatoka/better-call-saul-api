@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const port = process.env.PORT || 3000;
 const app = express();
-import axios from 'axios';
+const axios = require('axios').default;
 require('dotenv').config();
 
 // Connect to MongoDB
@@ -28,12 +28,13 @@ app.listen(port, () => {
 
 // make a call to the API every 13 minutes without axios
 setInterval(() => {
-    axios.get('https://better-call-saul-api.onrender.com/characters')
+    axios.get('hhttps://better-call-saul-api.onrender.com/characters')
         .then(res => {
             console.log(res.data);
-        },
-            err => {
-                console.log(err);
-            }
+        }
+        )
+        .catch(err => {
+            console.log(err);
+        }
         )
 }, 780000);
