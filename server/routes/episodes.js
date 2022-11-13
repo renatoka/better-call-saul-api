@@ -10,36 +10,26 @@ Added Query search by title and season
 */
 
 router.get('/', async (req, res) => {
-    const { title, season, directed_by, written_by } = req.query;
+    const { title, season } = req.query;
     try {
-        if (title && season && directed_by && written_by) {
+        if (title && season) {
             const episodes = await Episode.find({ title, season });
-            if (episodes.length == 0) return res.status(404).json({ message: 'No episode with that title and season found.' });
+            if (episodes.length == 0) return res.status(404).json({ message: 'No episode with title ' + title + ' and season ' + season + ' found' });
             else return res.status(200).json(episodes);
         }
         else if (title) {
             const episodes = await Episode.find({ title });
-            if (episodes.length == 0) return res.status(404).json({ message: 'No episode with that title found.' });
+            if (episodes.length == 0) return res.status(404).json({ message: 'No episode with title ' + title + ' found.' });
             else return res.status(200).json(episodes);
         }
         else if (season) {
             const episodes = await Episode.find({ season });
-            if (episodes.length == 0) return res.status(404).json({ message: 'No episode with that season found.' });
-            else return res.status(200).json(episodes);
-        }
-        else if (directed_by) {
-            const episodes = await Episode.find({ directed_by });
-            if (episodes.length == 0) return res.status(404).json({ message: 'No episode with that director found.' });
-            else return res.status(200).json(episodes);
-        }
-        else if (written_by) {
-            const episodes = await Episode.find({ written_by });
-            if (episodes.length == 0) return res.status(404).json({ message: 'No episode with that writer found.' });
+            if (episodes.length == 0) return res.status(404).json({ message: 'No such season as ' + season + ' found.' });
             else return res.status(200).json(episodes);
         }
         else {
             const episodes = await Episode.find();
-            if (episodes.length == 0) return res.status(404).json({ message: 'Database Error. No episodes found. Try again later.' });
+            if (episodes.length == 0) return res.status(404).json({ message: 'No episodes found.' });
             else return res.status(200).json(episodes);
         }
     } catch (err) {
