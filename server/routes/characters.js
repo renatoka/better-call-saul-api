@@ -2,19 +2,39 @@ const express = require('express');
 const router = express.Router();
 const Character = require('../models/character');
 
-// Get All Characters
-router.get('/', async (req, res, next) => {
+/* 
+Get All Characters 
+13.11.2022.
+-------------
+Added Query search by name and status
+*/
+router.get('/', async (req, res) => {
+    const { name, status } = req.query;
     try {
-        const characters = await Character.find();
-        if (characters.length == 0) return res.status(404).json({ message: 'Database Error. No characters found. Try again later.' });
-        else { res.status(200).json(characters) };
+        if (name && status) {
+            const characters = await Character.find({ name, status });
+            if (characters.length == 0) return res.status(404).json({ message: 'No user with that name and status found.' });
+            else return res.status(200).json(characters);
+        } else if (name) {
+            const characters = await Character.find({ name });
+            if (characters.length == 0) return res.status(404).json({ message: 'No user with that name found.' });
+            else return res.status(200).json(characters);
+        } else if (status) {
+            const characters = await Character.find({ status });
+            if (characters.length == 0) return res.status(404).json({ message: 'No user with that status found.' });
+            else return res.status(200).json(characters);
+        } else {
+            const characters = await Character.find();
+            if (characters.length == 0) return res.status(404).json({ message: 'Database Error. No characters found. Try again later.' });
+            else return res.status(200).json(characters);
+        }
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        return res.status(500).json({ message: err.message });
     }
 });
 
 // Get Random Character
-router.get('/random', async (req, res, next) => {
+router.get('/random', async (req, res) => {
     try {
         const characters = await Character.find();
         if (characters.length == 0) return res.status(404).json({ message: 'Database Error. No characters found. Try again later.' });
@@ -28,7 +48,8 @@ router.get('/random', async (req, res, next) => {
 });
 
 // Get Character by Name
-router.get('/character/:name', async (req, res, next) => {
+/* 13.11.2022. - Replaced with Query */
+/* router.get('/character/:name', async (req, res) => {
     try {
         const character = await Character.findOne({ name: req.params.name });
         if (character == null) return res.status(404).json({ message: 'Character doesn\'t exist. Check spelling and try again.' });
@@ -37,10 +58,10 @@ router.get('/character/:name', async (req, res, next) => {
         res.status(500).json({ message: err.message });
     }
 });
-
+ */
 
 // Get Specific Character by ID
-router.get('/:char_id', async (req, res, next) => {
+router.get('/:char_id', async (req, res) => {
     try {
         const character = await Character.find({ char_id: req.params.char_id });
         if (character.length == 0) return res.status(404).json({ message: 'Character doesn\'t exist. Check spelling and try again.' });
@@ -50,9 +71,8 @@ router.get('/:char_id', async (req, res, next) => {
     }
 });
 
-
 // Create a Character
-router.post('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
     const character = new Character({
         char_id: req.body.char_id,
         name: req.body.name,
@@ -79,7 +99,7 @@ router.post('/', async (req, res, next) => {
 });
 
 // Update a Character
-router.patch('/:char_id', async (req, res, next) => {
+router.patch('/:char_id', async (req, res) => {
     try {
         const character = await Character.find({ char_id: req.params.char_id });
         if (character.length == 0) return res.status(404).json({ message: 'No characters found with ID: ' + req.params.char_id });
