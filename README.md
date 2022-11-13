@@ -61,29 +61,6 @@ Endpoint to retrieve information from all characters.
 
 #### Get all episodes
 ```
-/api/episodes
-```
-
-#### Get an episode by id
-```
-/api/episodes/id
-```
-
-## Quote Endpoints
-
-#### Quote Attributes
-
-| Attribute   | Type          | Description  |
-| ----------- |:-------------:| ------------ |
-| episode_id  | integer   |Unique Id per quote |
-| title   | string        | Title of the episode |
-| season | integer  | Season number |
-| episode | integer | Episode of the season |
-| air_date | string | Date of first air |
-
-
-#### Get all episodes
-```
 /episodes
 ```
 
