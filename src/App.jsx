@@ -96,6 +96,32 @@ function App() {
                                 </li>
                             </ul>
                         </li>
+
+                        <li>
+                            <h3 className="font-semibold tracking-tight text-xl text-slate-900">
+                                Quotes
+                            </h3>
+
+                            <ul role="list" className="pl-3 mt-3 space-y-2">
+                                <li>
+                                    <a href="#get-all-episodes" className="text-slate-600 hover:text-slate-800">
+                                        Get All Quotes
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#get-random-episode" className="text-slate-600 hover:text-slate-800">
+                                        Get Random Quote
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#get-episode-id" className="text-slate-600 hover:text-slate-800">
+                                        Get Quote by ID
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -156,25 +182,12 @@ function App() {
                                         "portrayed": "Bob Odenkirk", <br />
                                         {'},'}
                                         <br />
-                                        {'{'}
-                                        <br />
-                                        "char_id": 2, <br />
-                                        "name": "Michael Ehrmantraut", <br />
-                                        "birthday": "Between 1940–1944", <br />
-                                        "occupation": "Private Investigator", <br />
-                                        "img":
-                                        "https://static.wikia.nocookie.net/breakingbad/images/4/46/BCS_S6_Portrait_Mike.jpg/revision/latest?cb=20220522174959", <br />
-                                        "status": "Deceased", <br />
-                                        "nickname": "Pop Pop", <br />
-                                        "appearance": [1, 2, 3, 4, 5, 6], <br />
-                                        "portrayed": "Jonathan Banks", <br />
-                                        {'}'}
                                     </code>
                                 </div>
                             </div>
                         </div>
                         <div className="border-b border-slate-300" id="get-random-character">
-                            <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
                                 Get Random Character
                             </h2>
                             <p className="mt-2 text-xl text-slate-600">
@@ -192,7 +205,7 @@ function App() {
                             </div>
                         </div>
                         <div className="border-b border-slate-300" id="get-character-name">
-                            <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
                                 Get Character By Name or Status
                             </h2>
                             <p className="mt-2 text-xl text-slate-600">
@@ -221,7 +234,7 @@ function App() {
                             </div>
                         </div>
                         <div className="border-b border-slate-300" id="get-character-id">
-                            <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
                                 Get Character By ID
                             </h2>
                             <p className="mt-2 text-xl text-slate-600">
@@ -286,7 +299,7 @@ function App() {
                             </div>
                         </div>
                         <div id="get-random-episode" className="border-b border-slate-300">
-                            <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
                                 Get Random Episode</h2>
                             <p className="mt-2 text-xl text-slate-600">
                                 This endpoint returns a random episode from the Better Call Saul universe.</p>
@@ -300,7 +313,7 @@ function App() {
                             </div>
                         </div>
                         <div id="get-episode-title" className="border-b border-slate-300">
-                            <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
                                 Get Episode by Title and/or Season</h2>
                             <p className="mt-2 text-xl text-slate-600">This endpoint returns the episode from the Better
                                 Call Saul universe by it's title and/or season.</p>
@@ -322,7 +335,7 @@ function App() {
                             </div>
                         </div>
                         <div id="get-episode-id" className="border-b border-slate-300">
-                            <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900">Get Episode By ID</h2>
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">Get Episode By ID</h2>
                             <p className="mt-2 text-xl text-slate-600">This endpoint returns a episode from the Better
                                 Call Saul universe by ID.</p>
                             <div className="mt-4">
@@ -333,6 +346,109 @@ function App() {
                                     </code>
                                     <p className="mt-2 text-base text-slate-600">Example: <code
                                         className="text-base font-mono text-slate-60">https://better-call-saul-api.onrender.com/episodes/1</code>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-8">
+                        <div className="border-b border-slate-300" id="get-all-characters">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
+                                Get All Quotes
+                            </h2>
+                            <p className="mt-2 text-xl text-slate-600">
+                                This endpoint returns all the quotes from the Better Call Saul universe.
+                            </p>
+                            <div className="mt-4">
+                                <h3 className="text-xl font-bold tracking-tight text-slate-900">
+                                    Endpoint
+                                </h3>
+                                <div className="mt-2">
+                                    <code className="text-base font-mono text-slate-600">
+                                        https://better-call-saul-api.onrender.com/quotes
+                                    </code>
+                                </div>
+                            </div>
+                            <div className="mt-4">
+                                <h3 className="text-xl font-bold tracking-tight text-slate-900">
+                                    Response
+                                </h3>
+
+                                <div className="mt-2">
+                                    <code className="text-base font-mono text-slate-600">
+                                        {'{'} <br />
+                                        "qoute_id" : 1, <br />
+                                        "qoute" : "You don’t have to make up with me. We don’t have to understand each other. Things are fine the way they are.", <br />
+                                        "author" : "Jimmy McGill"<br />
+                                        {'},'}
+                                        <br />
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="border-b border-slate-300" id="get-random-character">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
+                                Get Random Quote
+                            </h2>
+                            <p className="mt-2 text-xl text-slate-600">
+                                This endpoint returns a random quote from the Better Call Saul universe.
+                            </p>
+                            <div className="mt-4 ">
+                                <h3 className="text-xl font-bold tracking-tight text-slate-900">
+                                    Endpoint
+                                </h3>
+                                <div className="mt-2">
+                                    <code className="text-base font-mono text-slate-600">
+                                        https://better-call-saul-api.onrender.com/quotes/random
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="border-b border-slate-300" id="get-character-name">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
+                                Get Quote by Author
+                            </h2>
+                            <p className="mt-2 text-xl text-slate-600">
+                                This endpoint returns a quote from the Better Call Saul by query searching it's author.
+                            </p>
+                            <div className="mt-4 ">
+                                <h3 className="text-xl font-bold tracking-tight text-slate-900">
+                                    Endpoint
+                                </h3>
+                                <div className="mt-2">
+                                    <code className="text-base font-mono text-slate-600">
+                                        https://better-call-saul-api.onrender.com/quotes?author=:author
+                                    </code>
+
+                                    <p className="mt-2 text-base text-slate-600">
+                                        Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/quotes?author=Kim Wexler</code>
+                                    </p>
+
+                                    <p className="mt-2 text-base text-slate-600">
+                                        Note: The name of the character must be in the same format as the one in the
+                                        database. If you are not sure what the name of the character is, you can use the
+                                        <code className="text-base font-mono text-slate-600">/characters</code> endpoint
+                                        to get all the characters.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="border-b border-slate-300" id="get-character-id">
+                            <h2 className="mt-8 text-3xl font-bold tracking-tight text-slate-900">
+                                Get Quote By ID
+                            </h2>
+                            <p className="mt-2 text-xl text-slate-600">
+                                This endpoint returns a quote from the Better Call Saul universe by ID.
+                            </p>
+                            <div className="mt-4">
+                                <h3 className="text-xl font-bold tracking-tight text-slate-900">
+                                    Endpoint
+                                </h3>
+                                <div className="mt-2">
+                                    <code
+                                        className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/quotes/:qoute_id</code>
+                                    <p className="mt-2 text-base text-slate-600">Example: <code
+                                        className="text-base font-mono text-slate-600">https://www.bettercallsaul-api.com/quotes/1</code>
                                     </p>
                                 </div>
                             </div>
