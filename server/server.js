@@ -4,6 +4,9 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 const app = express();
 const axios = require('axios');
+const charactersRouter = require('./routes/characters');
+const episodesRouter = require('./routes/episodes');
+const quotesRouter = require('./routes/quotes');
 require('dotenv').config();
 
 // Connect to MongoDB
@@ -16,10 +19,9 @@ db.once('open', () => console.log('Connected to MongoDB Database'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-const charactersRouter = require('./routes/characters');
-const episodesRouter = require('./routes/episodes');
 app.use('/characters', charactersRouter);
 app.use('/episodes', episodesRouter);
+app.use('/quotes', quotesRouter);
 
 app.listen(port, () => {
     console.log(`app running on ${port} `);
