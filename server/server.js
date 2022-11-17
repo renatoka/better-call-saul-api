@@ -30,11 +30,12 @@ app.listen(port, () => {
 const callItself = async () => {
     try {
         const response = await axios.get('https://better-call-saul-api.onrender.com/characters');
-        console.log("Called API to stay alive");
+        const anotherResponse = await axios.get('https://convertoo.onrender.com/');
+        console.log("Called API and Convertoo to stay awake");
     } catch (error) {
         console.error(error);
     }
 }
 
-// call every 10 minutes
-setInterval(callItself, 600000);
+// call every 13 minutes
+setInterval(callItself, 780000);
