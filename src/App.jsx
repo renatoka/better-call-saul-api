@@ -14,7 +14,7 @@ function App() {
                             className="w-8 h-8 rounded-full" />
                     </a>
                 </div>
-                <a href="https://better-call-saul-api.onrender.com/characters"
+                <a href="https://bettercallsaul-api.onrender.com/characters"
                     className="px-4 py-2 text-sm font-semibold rounded bg-slate-900 text-slate-50 transition ease-in-out delay-75 hover:scale-105 duration-200">
                     Go Explore API
                 </a>
@@ -158,7 +158,7 @@ function App() {
                                 </h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/characters
+                                        https://bettercallsaul-api.onrender.com/characters
                                     </code>
                                 </div>
                             </div>
@@ -199,7 +199,7 @@ function App() {
                                 </h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/characters/random
+                                        https://bettercallsaul-api.onrender.com/characters/random
                                     </code>
                                 </div>
                             </div>
@@ -217,11 +217,11 @@ function App() {
                                 </h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/characters?name=:name&status=:status
+                                        https://bettercallsaul-api.onrender.com/characters?name=:name&status=:status
                                     </code>
 
                                     <p className="mt-2 text-base text-slate-600">
-                                        Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/characters?name=Jimmy McGill&status=Alive</code>
+                                        Example: <code className="text-base font-mono text-slate-600">https://bettercallsaul-api.onrender.com/characters?name=Jimmy McGill&status=Alive</code>
                                     </p>
 
                                     <p className="mt-2 text-base text-slate-600">
@@ -246,7 +246,7 @@ function App() {
                                 </h3>
                                 <div className="mt-2">
                                     <code
-                                        className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/characters/:char_id</code>
+                                        className="text-base font-mono text-slate-600">https://bettercallsaul-api.onrender.com/characters/:char_id</code>
                                     <p className="mt-2 text-base text-slate-600">Example: <code
                                         className="text-base font-mono text-slate-600">https://www.bettercallsaul-api.com/characters/1</code>
                                     </p>
@@ -264,7 +264,7 @@ function App() {
                                 <h3 className="text-xl font-bold tracking-tight text-slate-900">Endpoint</h3>
                                 <div className="mt-2 mb-1">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/episodes
+                                        https://bettercallsaul-api.onrender.com/episodes
                                     </code>
                                 </div>
                             </div>
@@ -307,7 +307,7 @@ function App() {
                                 <h3 className="text-xl font-bold tracking-tight text-slate-900">Endpoint</h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/episodes/random
+                                        https://bettercallsaul-api.onrender.com/episodes/random
                                     </code>
                                 </div>
                             </div>
@@ -321,15 +321,15 @@ function App() {
                                 <h3 className="text-xl font-bold tracking-tight text-slate-900">Endpoint</h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/episodes?title=:title&season=:season
+                                        https://bettercallsaul-api.onrender.com/episodes?title=:title&season=:season
                                     </code>
                                 </div>
                                 <div className="mt-2">
                                     <p className="mt-2 text-base text-slate-600">
-                                        Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/episodes?title="Uno"&season=1&</code>
+                                        Example: <code className="text-base font-mono text-slate-600">https://bettercallsaul-api.onrender.com/episodes?title="Uno"&season=1&</code>
                                     </p>
                                     <p className="mt-2 text-base text-slate-600">
-                                        Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/episodes?season=3</code>
+                                        Example: <code className="text-base font-mono text-slate-600">https://bettercallsaul-api.onrender.com/episodes?season=3</code>
                                     </p>
                                 </div>
                             </div>
@@ -342,10 +342,10 @@ function App() {
                                 <h3 className="text-xl font-bold tracking-tight text-slate-900">Endpoint</h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/episodes/:episode_id
+                                        https://bettercallsaul-api.onrender.com/episodes/:episode_id
                                     </code>
                                     <p className="mt-2 text-base text-slate-600">Example: <code
-                                        className="text-base font-mono text-slate-60">https://better-call-saul-api.onrender.com/episodes/1</code>
+                                        className="text-base font-mono text-slate-60">https://bettercallsaul-api.onrender.com/episodes/1</code>
                                     </p>
                                 </div>
                             </div>
@@ -365,7 +365,7 @@ function App() {
                                 </h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/quotes
+                                        https://bettercallsaul-api.onrender.com/quotes
                                     </code>
                                 </div>
                             </div>
@@ -399,7 +399,7 @@ function App() {
                                 </h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/quotes/random
+                                        https://bettercallsaul-api.onrender.com/quotes/random
                                     </code>
                                 </div>
                             </div>
@@ -417,11 +417,11 @@ function App() {
                                 </h3>
                                 <div className="mt-2">
                                     <code className="text-base font-mono text-slate-600">
-                                        https://better-call-saul-api.onrender.com/quotes?author=:author
+                                        https://bettercallsaul-api.onrender.com/quotes?author=:author
                                     </code>
 
                                     <p className="mt-2 text-base text-slate-600">
-                                        Example: <code className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/quotes?author=Kim Wexler</code>
+                                        Example: <code className="text-base font-mono text-slate-600">https://bettercallsaul-api.onrender.com/quotes?author=Kim Wexler</code>
                                     </p>
 
                                     <p className="mt-2 text-base text-slate-600">
@@ -446,7 +446,7 @@ function App() {
                                 </h3>
                                 <div className="mt-2">
                                     <code
-                                        className="text-base font-mono text-slate-600">https://better-call-saul-api.onrender.com/quotes/:qoute_id</code>
+                                        className="text-base font-mono text-slate-600">https://bettercallsaul-api.onrender.com/quotes/:qoute_id</code>
                                     <p className="mt-2 text-base text-slate-600">Example: <code
                                         className="text-base font-mono text-slate-600">https://www.bettercallsaul-api.com/quotes/1</code>
                                     </p>
