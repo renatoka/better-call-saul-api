@@ -7,7 +7,7 @@ you need to get started with the API. Give our documentation a read and start bu
 own applications.
 
 ## Base URL
-https://better-call-saul-api.onrender.com/
+https://bettercallsaul-api.onrender.com/
 
 ## Character Endpoints
 
