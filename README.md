@@ -1,73 +1,65 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+Welcome to the **Better Call Saul API**! This API, powered by NestJS, allows you to access information about the characters, quotes, and episodes from the popular television series **Better Call Saul**. You can retrieve all items for each category or access specific elements by their ID.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Endpoints
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+1. **Characters**
 
-## Description
+   - `/api/characters`: Returns all characters.
+   - `/api/characters/:id`: Returns the character with the specified ID.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+2. **Quotes**
 
-## Installation
+   - `/api/quotes`: Returns all quotes.
+   - `/api/quotes/:id`: Returns the quote with the specified ID.
 
-```bash
-$ npm install
+3. **Episodes**
+   - `/api/episodes`: Returns all episodes.
+   - `/api/episodes/:id`: Returns the episode with the specified ID.
+
+## How to Use
+
+To use this API, make HTTP requests to the desired endpoints using the appropriate HTTP method (e.g., GET). Here's an example using cURL:
+
+```shell
+# Get all characters
+curl -X GET https://better-call-saul-api.com/api/characters
+
+# Get a specific character by ID
+curl -X GET https://better-call-saul-api.com/api/characters/123
+
+# Get all quotes
+curl -X GET https://better-call-saul-api.com/api/quotes
+
+# Get a specific quote by ID
+curl -X GET https://better-call-saul-api.com/api/quotes/456
+
+# Get all episodes
+curl -X GET https://better-call-saul-api.com/api/episodes
+
+# Get a specific episode by ID
+curl -X GET https://better-call-saul-api.com/api/episodes/789
 ```
 
-## Running the app
+## Response Format
 
-```bash
-# development
-$ npm run start
+The API will respond with JSON objects containing the requested data. Here's an example response for retrieving a character by ID:
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```json
+{
+  "id": 123,
+  "name": "Saul Goodman",
+  "occupation": "Lawyer",
+  "status": "Alive",
+  "appearance": [1, 2, 3, 4, 5],
+  "nickname": "Jimmy McGill"
+  // Additional character properties...
+}
 ```
 
-## Test
+Please note that the response will vary depending on the endpoint and the specific item being requested.
 
-```bash
-# unit tests
-$ npm run test
+## Contributing
 
-# e2e tests
-$ npm run test:e2e
+If you'd like to contribute to the Better Call Saul API, please follow the guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Enjoy exploring the Better Call Saul API and have a great time discovering information about your favorite characters, quotes, and episodes!
