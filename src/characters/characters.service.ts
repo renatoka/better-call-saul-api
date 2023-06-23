@@ -15,6 +15,6 @@ export class CharactersService {
   }
 
   async findOne(id: number) {
-    return await this.characterModel.findOne({ id: id }).exec();
+    return await this.characterModel.findOne({ char_id: id }).exec();
   }
 }

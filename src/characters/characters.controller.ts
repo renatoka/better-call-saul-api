@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { CharactersService } from './characters.service';
-import { ApiProperty, ApiResponse } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Controller('api/characters')
 export class CharactersController {
@@ -16,11 +16,11 @@ export class CharactersController {
   }
 
   @ApiProperty({
-    description: 'Get all characters by ID',
+    description: 'Get a character by id',
     required: false,
   })
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    return this.charactersService.findOne(+id);
+    return await this.charactersService.findOne(+id);
   }
 }
