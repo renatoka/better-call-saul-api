@@ -8,9 +8,9 @@ import { EpisodesModule } from './episodes/episodes.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
-    .setTitle('Breaking Bad API (unofficial)')
+    .setTitle('Better Call Saul (unofficial)')
     .setDescription(
-      'This is a Breaking Bad API.  The API covers most of the data from the Breaking Bad universe, including characters, quotes and episodes.',
+      'This is a Better Call Saul API.  The API covers most of the data from the Better Call Saul universe, including characters, quotes and episodes.',
     )
     .setVersion('1.0')
     .build();
