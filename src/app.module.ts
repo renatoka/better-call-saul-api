@@ -5,15 +5,19 @@ import { CharactersModule } from './characters/characters.module';
 import { EpisodesModule } from './episodes/episodes.module';
 import { QuotesModule } from './quotes/quotes.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+
+const configService = new ConfigService();
 
 @Module({
   imports: [
     CharactersModule,
     EpisodesModule,
     QuotesModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://rkauric:iFaz1aURQ1mFa1QJ@cluster0.b9czkm5.mongodb.net/?retryWrites=true&w=majority',
-    ),
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+    }),
+    MongooseModule.forRoot(configService.get<string>('MONGO_DB_CREDENTIALS')),
   ],
   controllers: [AppController],
   providers: [AppService],
