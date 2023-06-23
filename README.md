@@ -1,3 +1,5 @@
+## Abstract
+
 Welcome to the **Better Call Saul API**! This API, powered by NestJS, allows you to access information about the characters, quotes, and episodes from the popular television series **Better Call Saul**. You can retrieve all items for each category or access specific elements by their ID.
 
 ## Endpoints
@@ -57,9 +59,5 @@ The API will respond with JSON objects containing the requested data. Here's an 
 ```
 
 Please note that the response will vary depending on the endpoint and the specific item being requested.
-
-## Contributing
-
-If you'd like to contribute to the Better Call Saul API, please follow the guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 Enjoy exploring the Better Call Saul API and have a great time discovering information about your favorite characters, quotes, and episodes!
