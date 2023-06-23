@@ -8,8 +8,10 @@ import { EpisodesModule } from './episodes/episodes.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
-    .setTitle('Breaking Bad API')
-    .setDescription('The Breaking Bad API swagger documentation')
+    .setTitle('Breaking Bad API (unofficial)')
+    .setDescription(
+      'This is a Breaking Bad API.  The API covers most of the data from the Breaking Bad universe, including characters, quotes and episodes.',
+    )
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config, {
